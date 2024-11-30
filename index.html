@@ -9,5 +9,22 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- Welcome-Toast Plugin Scripts -->
+    <script>
+      console.log("readyState #1", document.readyState);
+
+      function loadScript() {
+        console.log("readyState #2", document.readyState);
+        const newToast = window.document.createElement("div");
+        const newToastContent = window.document.createTextNode("Click Here!");
+        newToast.appendChild(newToastContent);
+
+        const targetDiv = document.getElementById("card");
+        const childElement = targetDiv.childNodes[0];
+        targetDiv.insertBefore(newToast, childElement);
+      }
+
+      window.addEventListener('load', loadScript);
+    </script>
   </body>
 </html>
